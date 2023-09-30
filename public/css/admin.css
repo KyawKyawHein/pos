@@ -1,0 +1,122 @@
+:root{
+    --text-color : #526069;
+    --bg-color :#e4eaec;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.navbar{
+    color: var(--text-color);
+}
+.menu-sidebar{
+    min-height: 90vh;
+
+    background-color: var(--bg-color);
+    border-right: 1px solid black;
+}
+.navbar-sidebar{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.list-body{
+    background-color: var(--bg-color)
+}
+.navbar-sidebar ul li{
+    margin-top: 40px;
+
+    color: var(--text-color);
+}
+.account-img{
+    width: 60px;
+    height: 60px;
+
+}
+
+.right-btn {
+
+    background-color: #3e8ef7;
+    float: right;
+    margin-top: 30px;
+    margin-right: 40px;
+}
+.heading-text{
+    color: var(--text-color);
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.table-responsive{
+    min-width: 400px;
+    overflow-x: auto;
+}
+.create-space{
+    background-color: rgba(27, 27, 111, 0.669);
+    border-radius: 25px;
+}
+a{
+    text-decoration: none;
+
+}
+.create-button{
+   margin-left: 25%;
+}
+
+.list-unstyled li a{
+    text-decoration: none;
+    color :var(--text-color)
+}
+select.orderStatus-yellow{
+    background-color: #FFD700;
+    color: #ffffff;
+}
+select.orderStatus-yellow option:checked{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+
+select.orderStatus-blue{
+    background-color: #0074D9;
+    color: #ffffff;
+}
+
+select.orderStatus-blue option:checked{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+select.orderStatus-green{
+    background-color: #28A745;
+    color: #ffffff;
+}
+
+select.orderStatus-green option:checked{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+select.orderStatus-red{
+    background-color: #DC3545;
+    color: #ffffff;
+}
+
+select.orderStatus-red option:checked{
+    background-color: #ffffff;
+    color: #000000;
+}
