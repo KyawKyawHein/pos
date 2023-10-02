@@ -19,7 +19,7 @@ class OrderController extends Controller
         })
         ->orderBy("created_at","asc")
         ->leftJoin("users","orders.user_id","users.id")
-        ->get();
+        ->paginate(8);
         $pOrder = Order::where("status","0")->get();
         $sOrder = Order::where("status","1")->get();
         $dOrder = Order::where("status","2")->get();

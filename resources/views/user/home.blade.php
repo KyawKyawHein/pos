@@ -62,7 +62,7 @@
 
                 @if (count($product) !=0)
                 @foreach ($product as $p)
-                <div class=" col-xxl-4 col-xl-4 col-md-6 col-sm-6 my-2 d-flex justify-content-center">
+                <div class=" col-xxl-4 col-xl-4 col-md-6 col-sm-6 my-2 d-flex justify-content-center detail-view">
                     <div class="card" style="width: 18rem;">
                         <img src="{{asset("storage/".$p->image)}}" class="w-100 img-thumbnail align-self-center" style="height:14rem"   alt="">
                         <div class="card-body">
@@ -70,9 +70,10 @@
                           <h5 class="text-primary">{{$p->category_name}}</h5>
                           <p class="card-text">{{Str::limit($p->description,40)}}</p>
                           <h5 class="text-success mb-3 text-center">{{$p->price}} MMK</h5>
+                          <input type="hidden" name="" class="view_productId" value="{{$p->id}}">
                           <div class="d-flex justify-content-evenly align-items-center">
 
-                            <a href="{{route("product#detail",[$p->id,$p->category_id])}}">     <button class="btn btn-dark" type="submit">       <i class="fa-solid fa-circle-info"></i> </button></a>
+                            <a href="{{route("product#detail",[$p->id,$p->category_id])}}">     <button class="btn btn-dark forView" type="submit">       <i class="fa-solid fa-circle-info"></i> </button></a>
 
                                 <a href="#"><button class="btn btn-dark"><i class="fa-solid fa-cart-shopping"></i></button></a>
 
@@ -184,6 +185,19 @@
                     }
                 })
             }
+        })
+        $(".forView").click(function(){
+              $parentNode = $(this).parents(".detail-view");
+              $productId = $parentNode.find(".view_productId").val();
+              $.ajax({
+                "type" : "GET",
+                "url"  : "/product/viewCount",
+                "data" : {
+                    "productId" : $productId,
+                },
+                "dataType" : "json",
+
+              })
         })
     })
 </script>

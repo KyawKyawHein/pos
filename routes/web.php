@@ -106,6 +106,7 @@ Route::middleware(["auth"])->group(function(){
 
             Route::get("detail,{id},{categoryId}",[ProductController::class,"detail"])->name("product#detail");
             Route::get("sortingList",[AjaxController::class,"productList"])->name("ajax#productList");
+            Route::get("viewCount",[AjaxController::class,"addViewCount"])->name("ajax#viewCount");
 
         });
 

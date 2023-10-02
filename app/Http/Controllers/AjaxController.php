@@ -33,7 +33,17 @@ class AjaxController extends Controller
         return response()->json(["Message" => "Cart is created successfully"],200);
 
     }
+    // add view count for product
 
+    public function addViewCount(Request $request){
+       $product = Product::where("id",$request->productId)->first();
+       $viewCount = [
+        "view_count" => $product->view_count +1,
+       ];
+
+       Product::where("id",$product->id)->update($viewCount);
+
+    }
     //remove individual product btn
 
     public function removeBtn(Request $request){
@@ -65,7 +75,7 @@ class AjaxController extends Controller
                  "quantity" => $orderItem["quantity"],
                  "total" => $orderItem["total"],
             ]);
-        // add the total from 
+        // add the total from
         $total = $data->total;
 
         }

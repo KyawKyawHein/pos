@@ -150,6 +150,9 @@
                     </tbody>
                 </table>
             </div>
+            <div class="mt-3 d-flex justify-content-center align-item-center">
+                {{$order->links()}}
+            </div>
         </div>
     </div>
 @endsection
