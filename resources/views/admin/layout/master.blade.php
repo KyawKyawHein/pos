@@ -44,6 +44,7 @@
                                 <li><a class="dropdown-item" href="{{route("admin#detail")}}"><i class="fa-solid fa-user me-2"></i> Account  </a></li>
                                 <li><a class="dropdown-item" href="{{route("admin#passwordChangePage")}}"><i class="fa-solid fa-key me-2"></i>Security</a></li>
                                 <li><a class="dropdown-item" href="{{route("admin#list")}}"><i class="fa-solid fa-user-tie me-2"></i>Admins List</a></li>
+                                <li><a class="dropdown-item" href="{{route("admin#userList")}}"><i class="fa-solid fa-user-tie me-2"></i>Users List</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><form action="{{route("logout")}}" method="post">
                                     @csrf

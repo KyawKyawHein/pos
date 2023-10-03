@@ -90,6 +90,22 @@ class AdminController extends Controller
        User::where("id",$id)->delete();
        return redirect()->route("admin#list");
     }
+
+    //admin page's user list
+
+    public function userList(){
+        $user = User::where("role","user")->paginate(8);
+        return view("admin.account.userList",compact("user"));
+    }
+
+    public function userRoleChange(Request $request){
+        User::where("id",$request->id)->update([
+            "role" => $request->role
+        ]);
+        return response()->json();
+    }
+
+
     //validate the request
     private function ValidationCheck($request){
         Validator::make($request->all(),[
