@@ -24,15 +24,14 @@ class DatabaseSeeder extends Seeder
 
         User::create([
 
-                "name" => "Wai Yan",
-                "email" => "waiyan@gmail.com",
+                "name" => "Kyaw Kyaw Hein",
+                "email" => "hetero@gmail.com",
                 
-                "phone" => "09751833827",
-                "address" => "Madaya",
+                "phone" => "09799635886",
+                "address" => "Ygn",
                 "gender" => "male",
                 "role" => "admin",
-                "password" => Hash::make("waiyan123")
-
+                "password" => Hash::make("kyawkyawhein")
             ]);
     }
 }
